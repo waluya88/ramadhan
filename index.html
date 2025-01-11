@@ -25,22 +25,6 @@
         .filter-buttons button.active {
             background-color: #0056b3;
         }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .gallery-item {
-            border: 1px solid #ddd;
-            padding: 10px;
-            width: calc(33.333% - 20px);
-            box-sizing: border-box;
-            text-align: center;
-        }
-        .gallery-item img {
-            max-width: 100%;
-            height: auto;
-        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900 font-sans leading-normal tracking-normal">
@@ -51,7 +35,6 @@
                 <li><a href="#home" class="hover:text-blue-600 transition duration-300">Home</a></li>
                 <li><a href="#about" class="hover:text-blue-600 transition duration-300">About</a></li>
                 <li><a href="#projects" class="hover:text-blue-600 transition duration-300">Projects</a></li>
-                <li><a href="#gallery" class="hover:text-blue-600 transition duration-300">Gallery</a></li>
                 <li><a href="#contact" class="hover:text-blue-600 transition duration-300">Contact</a></li>
             </ul>
         </nav>
@@ -94,6 +77,13 @@
 
         <section id="projects" class="mb-10">
             <h2 class="text-3xl font-semibold mb-6 text-blue-600">My Projects</h2>
+            <!-- Tombol Filter -->
+            <div class="filter-buttons mb-6">
+                <button class="active" data-filter="all">Semua</button>
+                <button data-filter="tugas">Tugas</button>
+                <button data-filter="certificate">Certificates</button>
+            </div>
+            <!-- Tabel Projects -->
             <div class="overflow-x-auto">
                 <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
                     <thead class="bg-blue-600 text-white">
@@ -103,86 +93,46 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="border-b project-hover">
+                        <!-- Tugas -->
+                        <tr class="border-b project-hover" data-category="tugas">
                             <td class="p-4">Form Login</td>
                             <td class="p-4"><a href="Tugas form login/login.html" target="_blank" class="text-blue-600 hover:underline">View Project</a></td>
                         </tr>
-                        <tr class="border-b project-hover">
+                        <tr class="border-b project-hover" data-category="tugas">
                             <td class="p-4">Calculator</td>
                             <td class="p-4"><a href="tugas kalkulator/kalku.html" target="_blank" class="text-blue-600 hover:underline">View Project</a></td>
                         </tr>
-                        <tr class="border-b project-hover">
+                        <tr class="border-b project-hover" data-category="tugas">
                             <td class="p-4">Dashboard Admin</td>
                             <td class="p-4"><a href="tugas dashboard/dashboard.html" target="_blank" class="text-blue-600 hover:underline">View Project</a></td>
                         </tr>
-                        <tr class="border-b project-hover">
+                        <tr class="border-b project-hover" data-category="tugas">
                             <td class="p-4">Game Tetris</td>
                             <td class="p-4"><a href="game tetris/tetris.html" target="_blank" class="text-blue-600 hover:underline">View Project</a></td>
                         </tr>
-                        <tr class="border-b project-hover">
+                        <tr class="border-b project-hover" data-category="tugas">
                             <td class="p-4">Diagram</td>
                             <td class="p-4"><a href="diagram/diagram.html" target="_blank" class="text-blue-600 hover:underline">View Project</a></td>
                         </tr>
+                        <!-- Certificates -->
+                        <tr class="border-b project-hover" data-category="certificate">
+                            <td class="p-4">HTML Certificate</td>
+                            <td class="p-4"><a href="https://www.sololearn.com/certificates/CC-33RK2RLO" target="_blank" class="text-blue-600 hover:underline">View Certificate</a></td>
+                        </tr>
+                        <tr class="border-b project-hover" data-category="certificate">
+                            <td class="p-4">CSS Certificate</td>
+                            <td class="p-4"><a href="https://www.sololearn.com/certificates/CC-LXM9TVXG" target="_blank" class="text-blue-600 hover:underline">View Certificate</a></td>
+                        </tr>
+                        <tr class="border-b project-hover" data-category="certificate">
+                            <td class="p-4">JavaScript Certificate</td>
+                            <td class="p-4"><a href="https://www.sololearn.com/certificates/CC-1YLFBQQ8" target="_blank" class="text-blue-600 hover:underline">View Certificate</a></td>
+                        </tr>
+                        <tr class="border-b project-hover" data-category="certificate">
+                            <td class="p-4">JavaScript Intermediate Certificate</td>
+                            <td class="p-4"><a href="https://www.sololearn.com/certificates/CC-BJVNLZ7O" target="_blank" class="text-blue-600 hover:underline">View Certificate</a></td>
+                        </tr>
                     </tbody>
                 </table>
-            </div>
-        </section>
-
-         <section id="certificates" class="mb-10">
-            <h2 class="text-3xl font-semibold mb-6 text-blue-600">Certificates</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4">HTML Certificate</h3>
-                    <a href="https://www.sololearn.com/certificates/CC-33RK2RLO" target="_blank" class="text-blue-600 hover:underline">View Certificate</a>
-                </div>
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4">CSS Certificate</h3>
-                    <a href="https://www.sololearn.com/certificates/CC-LXM9TVXG" target="_blank" class="text-blue-600 hover:underline">View Certificate</a>
-                </div>
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4">JavaScript Certificate</h3>
-                    <a href="https://www.sololearn.com/certificates/CC-1YLFBQQ8" target="_blank" class="text-blue-600 hover:underline">View Certificate</a>
-                </div>
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4">JavaScript Intermediate Certificate</h3>
-                    <a href="https://www.sololearn.com/certificates/CC-BJVNLZ7O" target="_blank" class="text-blue-600 hover:underline">View Certificate</a>
-                </div>
-            </div>
-        </section>
-        
-        <section id="gallery" class="mb-10">
-            <h2 class="text-3xl font-semibold mb-6 text-blue-600">Gallery</h2>
-            <div class="filter-buttons">
-                <button class="active" data-filter="all">Semua</button>
-                <button data-filter="ilustrasi">Ilustrasi</button>
-                <button data-filter="desain-grafis">Desain Grafis</button>
-                <button data-filter="fotografi">Fotografi</button>
-            </div>
-            <div class="gallery">
-                <div class="gallery-item" data-category="ilustrasi">
-                    <img src="ilustrasi1.jpg" alt="Ilustrasi 1">
-                    <p>Ilustrasi 1</p>
-                </div>
-                <div class="gallery-item" data-category="desain-grafis">
-                    <img src="desain1.jpg" alt="Desain Grafis 1">
-                    <p>Desain Grafis 1</p>
-                </div>
-                <div class="gallery-item" data-category="fotografi">
-                    <img src="fotografi2.jpg" alt="Fotografi 1">
-                    <p>Fotografi 1</p>
-                </div>
-                <div class="gallery-item" data-category="ilustrasi">
-                    <img src="ilustrasi2.jpg" alt="Ilustrasi 2">
-                    <p>Ilustrasi 2</p>
-                </div>
-                <div class="gallery-item" data-category="desain-grafis">
-                    <img src="desain2.jpg" alt="Desain Grafis 2">
-                    <p>Desain Grafis 2</p>
-                </div>
-                <div class="gallery-item" data-category="fotografi">
-                    <img src="fotografi1.jpg" alt="Fotografi 2">
-                    <p>Fotografi 2</p>
-                </div>
             </div>
         </section>
 
@@ -235,10 +185,10 @@
     </footer>
 
     <script>
-        // JavaScript untuk filter galeri
+        // JavaScript untuk filter projects
         document.addEventListener('DOMContentLoaded', function () {
             const filterButtons = document.querySelectorAll('.filter-buttons button');
-            const galleryItems = document.querySelectorAll('.gallery-item');
+            const projectItems = document.querySelectorAll('.project-hover');
 
             filterButtons.forEach(button => {
                 button.addEventListener('click', function () {
@@ -249,11 +199,11 @@
 
                     const filter = this.getAttribute('data-filter');
 
-                    galleryItems.forEach(item => {
+                    projectItems.forEach(item => {
                         const category = item.getAttribute('data-category');
                         // Tampilkan semua item jika filter adalah 'all'
                         if (filter === 'all' || category === filter) {
-                            item.style.display = 'block';
+                            item.style.display = 'table-row';
                         } else {
                             item.style.display = 'none';
                         }
